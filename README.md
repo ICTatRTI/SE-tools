@@ -11,12 +11,15 @@ Now open the tangerine container from the command line by executing:
 from within the container execute: 
 ```create-group "SE Tools" se-tools```
 
-<img heigth="250" alt="Screen Shot 2022-12-06 at 9 50 52 AM" src="https://user-images.githubusercontent.com/453000/205864383-6205bd60-60c4-4d51-8acd-93675e7904c6.png">
+<img width="450" alt="Screen Shot 2022-12-06 at 9 50 52 AM" src="https://user-images.githubusercontent.com/453000/205864383-6205bd60-60c4-4d51-8acd-93675e7904c6.png">
+
 
 Wait for the command to complete.
-<img width="656" alt="Screen Shot 2022-12-06 at 9 51 38 AM" src="https://user-images.githubusercontent.com/453000/205864544-3943a0ef-664a-4a48-8643-de805c3f9ace.png">
+
+<img width="400" alt="Screen Shot 2022-12-06 at 9 51 38 AM" src="https://user-images.githubusercontent.com/453000/205864544-3943a0ef-664a-4a48-8643-de805c3f9ace.png">
 
 Now open the backend and find the new group that was created for you with the new content in it:
+
 <img width="345" alt="Screen Shot 2022-12-06 at 9 52 20 AM" src="https://user-images.githubusercontent.com/453000/205864705-2004bf7d-5169-44c7-b2d6-b7d5deb31bac.png">
 
 You will have the below forms available and some audio files and images under the image library!
