@@ -1,0 +1,78 @@
+[
+  {
+    "id": "user-profile",
+    "src": "./assets/user-profile/form.html",
+    "description": "User Profile",
+    "archived": true,
+    "title": "User Profile",
+    "icon": "perm_identity",
+    "type": "user-profile",
+    "searchSettings": {
+      "shouldIndex": false,
+      "primaryTemplate": "",
+      "secondaryTemplate": "",
+      "variablesToIndex": []
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": true,
+      "filterByLocation": true,
+      "push": true,
+      "pull": true
+    },
+    "printUrl": "https://iww.tangerinecentral.org/app/group-c8a27c33-ad9c-4225-b1a2-0d9928fd2596/#/tangy-form-editor/group-c8a27c33-ad9c-4225-b1a2-0d9928fd2596/user-profile/print"
+  },
+  {
+    "id": "form-4c69c7e7-416c-4f25-a4ea-1e0d7885c72b",
+    "type": "form",
+    "title": "Numbers",
+    "src": "./assets/form-4c69c7e7-416c-4f25-a4ea-1e0d7885c72b/form.html",
+    "searchSettings": {
+      "shouldIndex": false,
+      "variablesToIndex": [],
+      "primaryTemplate": "",
+      "secondaryTemplate": ""
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": false,
+      "push": true,
+      "pull": false,
+      "filterByLocation": false
+    }
+  },
+  {
+    "id": "form-b9c00566-1c80-4a39-bb9e-b0c8320f83e8",
+    "type": "form",
+    "title": "Letters",
+    "src": "./assets/form-b9c00566-1c80-4a39-bb9e-b0c8320f83e8/form.html",
+    "searchSettings": {
+      "shouldIndex": false,
+      "variablesToIndex": [],
+      "primaryTemplate": "",
+      "secondaryTemplate": ""
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": false,
+      "push": true,
+      "pull": false,
+      "filterByLocation": false
+    }
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "locations": {
+    "miZmv709": {
+      "parent": "root",
+      "label": "Western",
+      "id": "miZmv709",
+      "level": "district",
+      "children": {
+        "oFxYsqMP": {
+          "parent": "miZmv709",
+          "label": "Jane Austen",
+          "id": "oFxYsqMP",
+          "level": "school_name",
+          "children": {}
+        },
+        "FF8dygq2": {
+          "parent": "miZmv709",
+          "label": "St Patraick's",
+          "id": "FF8dygq2",
+          "level": "school_name",
+          "children": {}
+        },
+        "9o71ETEG": {
+          "parent": "miZmv709",
+          "label": "Maya Angelou",
+          "id": "9o71ETEG",
+          "level": "school_name",
+          "children": {}
+        }
+      }
+    },
+    "VIVisV2V": {
+      "parent": "root",
+      "label": "Eastern",
+      "id": "VIVisV2V",
+      "level": "district",
+      "children": {
+        "pQhVOKfG": {
+          "parent": "VIVisV2V",
+          "label": "Eastern Private",
+          "id": "pQhVOKfG",
+          "level": "school_name",
+          "children": {}
+        },
+        "lshMCXSH": {
+          "parent": "VIVisV2V",
+          "label": "Queen Elizabeth I",
+          "id": "lshMCXSH",
+          "level": "school_name",
+          "children": {}
+        },
+        "UCC82XvM": {
+          "parent": "VIVisV2V",
+          "label": "Marie Curie",
+          "id": "UCC82XvM",
+          "level": "school_name",
+          "children": {}
+        },
+        "8jrOci23": {
+          "parent": "VIVisV2V",
+          "label": "Stephen Hawking",
+          "id": "8jrOci23",
+          "level": "school_name",
+          "children": {}
+        }
+      }
+    }
+  },
+  "locationsLevels": [
+    "district",
+    "school_name"
+  ],
+  "metadata": {}
+}

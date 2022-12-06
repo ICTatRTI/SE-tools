@@ -1,0 +1,32 @@
+{
+   "goHomeAfterFormSubmit":true,
+   "kioskMode": true,
+   "syncProtocol": "1",
+   "p2pSync": "true",
+   "homeUrl" : "custom-app",
+   "serverUrl" : "http://localhost/",
+   "modules" : [
+      "csv"
+   ],
+   "passwordPolicy":"(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
+   "passwordRecipe":"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters",
+   "showQueries" : true,
+   "uploadUnlockedFormReponses" : true,
+   "securityQuestionText" : "What is your year of birth?",
+   "hideProfile" : true,
+   "groupId" : "example",
+   "direction" : "undefined",
+   "columnsOnVisitsTab" : [],
+   "showCaseReports": true,
+   "listUsernamesOnLoginScreen" : true,
+   "securityPolicy" : [
+      "password"
+   ],
+   "languageCode" : "en",
+   "languageDirection" : "ltr",
+   "hashSecurityQuestionResponse" : false,
+   "groupName" : "example",
+   "couchdbPush4All": false,
+   "couchdbPullUsingDocIds": false,
+   "autoMergeConflicts": false
+ }
