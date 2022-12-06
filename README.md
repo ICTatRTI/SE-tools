@@ -11,7 +11,7 @@ Now open the tangerine container from the command line by executing:
 from within the container execute: 
 ```create-group "SE Tools" se-tools```
 
-<img width="667" alt="Screen Shot 2022-12-06 at 9 50 52 AM" src="https://user-images.githubusercontent.com/453000/205864383-6205bd60-60c4-4d51-8acd-93675e7904c6.png">
+<img heigth="400" alt="Screen Shot 2022-12-06 at 9 50 52 AM" src="https://user-images.githubusercontent.com/453000/205864383-6205bd60-60c4-4d51-8acd-93675e7904c6.png">
 
 Wait for the command to complete.
 <img width="656" alt="Screen Shot 2022-12-06 at 9 51 38 AM" src="https://user-images.githubusercontent.com/453000/205864544-3943a0ef-664a-4a48-8643-de805c3f9ace.png">
@@ -28,6 +28,8 @@ You will have the below forms available and some audio files and images under th
 Start the app in Kiosk mode by going to the top right menu and select Kiosk
 
 <img width="975" alt="Screen Shot 2022-12-06 at 9 44 55 AM" src="https://user-images.githubusercontent.com/453000/205862971-6497f7ab-fd70-436f-b539-63f5ae1bbc4d.png">
+
+
 
 Start the numbers or letters assessment and hand over the tablet to the child. 
 
