@@ -4,7 +4,7 @@ Self-Evaluation Tools content set for Tangerine. This content provides 2x self-e
 
 # Analysis of Instruments' Internal Consistency, Reliability, and Consistency
 
-These tools were developed at the request of [Imagine Worldwide](https://www.imagineworldwide.org/) with the support of the [Jacobs Foundation](https://jacobsfoundation.org/). RTI carried out field testing and a pilot study to assess the tools' internal consistency, test-retest reliability, and concurrent validity with respect to "traditional" EGRA and EGMA. The report summarizing these findings is available [here](../research/English_SaEgraSaEgma_GhanaPilot_2022-12-16.pdf).
+These tools were developed at the request of [Imagine Worldwide](https://www.imagineworldwide.org/) with the support of the [Jacobs Foundation](https://jacobsfoundation.org/). RTI carried out field testing and a pilot study to assess the tools' internal consistency, test-retest reliability, and concurrent validity with respect to "traditional" EGRA and EGMA. The report summarizing these findings is available [here](./research/English_SaEgraSaEgma_GhanaPilot_2022-12-16.pdf).
 
 
 # Installation and Use
