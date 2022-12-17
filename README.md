@@ -1,8 +1,19 @@
-Self-Evaluation Tools content set for Tangerine. This content provides 2x self-evaluation tools, one is for reading and the other form math. Use this interactive content straight out of the box when creating new groups. From within the tangerine container execute group-create command
+# Self-Administered EGRA / EGMA
+
+Self-Evaluation Tools content set for Tangerine. This content provides 2x self-evaluation tools, one is for reading and the other for math. Use this interactive content straight out of the box when creating new groups. 
+
+# Analysis of Instruments' Internal Consistency, Reliability, and Consistency
+
+These tools were developed at the request of [Imagine Worldwide](https://www.imagineworldwide.org/) with the support of the [Jacobs Foundation](https://jacobsfoundation.org/). RTI carried out field testing and a pilot study to assess the tools' internal consistency, test-retest reliability, and concurrent validity with respect to "traditional" EGRA and EGMA. The report summarizing these findings is available [here](../research/English_SaEgraSaEgma_GhanaPilot_2022-12-16.pdf).
+
+
+# Installation and Use
+
+From within the tangerine container execute the `group-create` command
 
  - Download the content set from this repository
- - Download the entire content of this repository into a new folder called se-tools 
- - Copy this folder into the content-sets folder located under the tangerine installation (tangerine/content-sets)
+ - Download the entire content of this repository into a new folder called `se-tools` 
+ - Copy this folder into the `content-sets` folder located under the tangerine installation (`tangerine/content-sets`)
 
 <img width="324" alt="Screen Shot 2022-12-06 at 9 47 53 AM" src="https://user-images.githubusercontent.com/453000/205863712-47282470-c656-4dfb-a7a7-f4c4774c8119.png">
 
@@ -31,8 +42,6 @@ You will have the below forms available and some audio files and images under th
 Start the app in Kiosk mode by going to the top right menu and select Kiosk
 
 <img width="975" alt="Screen Shot 2022-12-06 at 9 44 55 AM" src="https://user-images.githubusercontent.com/453000/205862971-6497f7ab-fd70-436f-b539-63f5ae1bbc4d.png">
-
-
 
 Start the numbers or letters assessment and hand over the tablet to the child. 
 
