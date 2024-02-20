@@ -11,7 +11,7 @@
   sectionEnable('section_student_id_confirm')
 else 
   sectionDisable('section_student_id_confirm')
-debugger
+
 if (getValue('num_id1') != '2' && getValue('num_id2') != '9' && getValue('num_id3') != '0' && getValue('num_id4') != '12' ) {
 sectionDisable('sec_num_id5')
 sectionDisable('sec_num_id6')
@@ -644,7 +644,7 @@ sectionDisable('sec_l1_word_problem_06')
       >
           <tangy-form-item id="sec_consent" 
             title="Consent"
-             hide-back-button
+             dont-hide-back-button
             on-open="
             "
             on-change="
@@ -767,11 +767,8 @@ sectionDisable('sec_l1_word_problem_06')
           </tangy-form-item>
           <tangy-form-item id="opening_staging" 
             title="Staging: Hand to Child"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/launch_tap-arrow-to-begin.mp3','instructions');
-   //
-   play();
             "
             on-change="
       null 
@@ -780,26 +777,20 @@ sectionDisable('sec_l1_word_problem_06')
             "
           >
             <template>
-   <tangy-box name="ready-to-start" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="welcome-tangerine">
-           <img src="./assets/media/ms-passive.png" style="max-height:498px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="" id="thank-you">
-       </div>
-   </tangy-box>
-   <tangy-box name="tangerineMan" class="" style="position:relative;">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/launch_tap-arrow-to-begin.mp3','instructions');play();" id="instructions">
-           <img src="" style="" class="talk" onclick="" id="prompt">
-       </div>
-   </tangy-box>
+              <tangy-box name="ready-to-start" class="" style="">
+                  <div style="display:flex;margin-bottom:-2rem;" id="welcome-tangerine">
+                      <img src="./assets/media/ms-passive.png" style="max-height:498px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" id="thank-you">
+                  </div>
+              </tangy-box>
+              <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+                  <option id="instructions" value="0" play-on-open="on" image="assets/media/instructions.png" sound="./assets/media/launch_tap-arrow-to-begin.mp3"></option>
+              </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="opening_pen_down" 
             title="Staging: Pen Down"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_78-place-pencil-and-paper-aside.mp3','instructions');
-   //
-   play();
             "
             on-change="
       null 
@@ -809,25 +800,18 @@ sectionDisable('sec_l1_word_problem_06')
             "
           >
             <template>
-      <tangy-box name="tangerineMan" class="" style="position:relative;">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_78-place-pencil-and-paper-aside.mp3','instructions');play();" id="instructions">
-           <img src="" style="" class="talk" onclick="" id="prompt">
-       </div>
-   </tangy-box>
+              <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+                <option id="instructions" value="0" play-on-open="on" image="./assets/media/instructions.png" sound="assets/media/math_78-place-pencil-and-paper-aside.mp3"></option>
+            </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_game" 
             title="Number - Game"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_75_opening-game-intro.mp3','instructions');
-   // Next two lines obviated by demo video
-   // 
-   play();
             "
             on-change="
             "
@@ -839,24 +823,18 @@ sectionDisable('sec_l1_word_problem_06')
       <tangy-eftouch name="game_transition" hidden="" error-text="" warn-text="" class="" style="width: 1278px; height: 400px;" label="" open-sound="" input-sound="" transition-sound="" transition-delay="50" transition-message="" warning-message="" warning-time="0" time-limit="30000" incorrect-message="" go-next-on-time-limit="">
       </tangy-eftouch>
       <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="game" question-number="" label="" hint-text="" error-text="" warn-text="" class="" style=""></tangy-keyboard-input>
-      <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math-75_opening_game_intro.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="display:none;" class="talk" onclick="" id="prompt">
-       </div>
-   </tangy-box>
+      <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+        <option value="0" image="./assets/media/instructions.png" sound="assets/media/math_75_opening-game-intro.mp3" id="instructions" play-on-open="on">
+      </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="copy_of_Transition_3_372883c334584905a6f6e79563cde021" 
             title="Copy of Transition #3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_70-transition-next-well-do-something-different.mp3','instructions');
-   //
-   play();
             "
             on-change="
             "
@@ -865,19 +843,18 @@ sectionDisable('sec_l1_word_problem_06')
             "
           >
             <template>
+              <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+                <option value="0" image="./assets/media/instructions.png" sound="./assets/media/math_70-transition-next-well-do-something-different.mp3" id="instructions" play-on-open="on">
+              </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id_demo" 
             title="Number ID - Demo"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_44-number_id_proxy_demo.mp3','instructions')
-   // Next two lines obviated by demo video
-   // 
-   // play();
             "
             on-change="
             "
@@ -887,25 +864,18 @@ sectionDisable('sec_l1_word_problem_06')
           >
             <template>
       <tangy-box name="num_id_demo" class="" style="">
-       <div style="text-align:center;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;"> <video autoplay="" style="margin-left: auto" height="400px">
+        <div style="text-align:center;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;"> <video autoplay="" style="margin-left: auto" height="400px">
                <source src="./assets/media/math_83-number-id-screenshare-demo-no-skipping.mp4" type="video/mp4"></video> </div>
-   </tangy-box>
-      <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <div id="instructions"></div>
-           <div id="prompt"></div>
-       </div>
-   </tangy-box>
+      </tangy-box>
+      <tangy-prompt-box name="tangerineMan" class=""  style="background: transparent;">
+        <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_44-number_id_proxy_demo.mp3"></option>
+      </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id00" 
             title="Number ID Practice 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   // Window functions already declared
-   queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions')
-   //
-   play();
    // Background already blue
    document.styleSheets[1].removeRule(6);
    document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
@@ -918,24 +888,19 @@ sectionDisable('sec_l1_word_problem_06')
           >
             <template>
       <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id_prac_01" required="" question-number="" label=" Practice Question" hint-text="" error-text="" warn-text="" class="" style=""></tangy-keyboard-input>
-      <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_1-one.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+      <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+        <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3"  play-on-open="on">
+        <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_1-one.mp3">
+      </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id1" 
             title="Number Identification 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',` background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/orange_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_2-two.mp3','prompt');
-   //
-   play(); 
             "
             on-change="
             "
@@ -944,22 +909,17 @@ sectionDisable('sec_l1_word_problem_06')
             "
           >
             <template>
-<tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id1" required="" question-number="" label=" " hint-text="" error-text="" warn-text="" class="" style=""></tangy-keyboard-input>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_2-two.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+            <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id1" required="" question-number="" label=" " hint-text="" error-text="" warn-text="" class="" style=""></tangy-keyboard-input>
+            <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+              <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+              <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_2-two.mp3" play-on-open="on">
+            </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id2" 
             title="Number Identification 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_3-nine.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -967,22 +927,17 @@ sectionDisable('sec_l1_word_problem_06')
             "
           >
             <template>
-   <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id2" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_3-nine.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id2" label=" " class="" style="" required=""></tangy-keyboard-input>
+    <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+      <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+      <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_3-nine.mp3" play-on-open="on">
+    </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id3" 
             title="Number Identification 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_4-zero.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -990,22 +945,17 @@ sectionDisable('sec_l1_word_problem_06')
             "
           >
             <template>
-   <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id3" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_4-zero.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id3" label=" " class="" style="" required=""></tangy-keyboard-input>
+    <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+      <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+      <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_4-zero.mp3" play-on-open="on">
+    </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id4" 
             title="Number Identification 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_5-twelve.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1014,22 +964,16 @@ sectionDisable('sec_l1_word_problem_06')
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id4" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_5-twelve.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_5-twelve.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id5" 
             title="Number Identification 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-      //num id skip rules 
-queue('./assets/media/math_6-forty_five.mp3','prompt');
-//
-play();
             "
             on-change="
             "
@@ -1038,21 +982,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix=" " postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id5" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_6-forty-five.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_6-forty_five.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id6" 
             title="Number Identification 6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-queue('./assets/media/math_7-thirty_nine.mp3','prompt');
-//
-play();
             "
             on-change="
             "
@@ -1061,21 +1000,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id6" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_7-thirty_nine.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_7-thirty_nine.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id7" 
             title="Number Identification 7"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_8-eighty.mp3','prompt');
-   //
-   play();;
             "
             on-change="
             "
@@ -1084,21 +1018,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_i7" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_8-eighty.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_8-eighty.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id8" 
             title="Number Identification 8"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_9-seventy_four.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1107,21 +1036,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id8" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_9-seventy_four.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_9-seventy_four.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id9" 
             title="Number Identification 9"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_10-sixty_six.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1130,21 +1054,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id9" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_10-sixty_six.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_10-sixty_six.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id10" 
             title="Number Identification 10"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_11-one_hundred_and_eight.mp3','prompt');
-  // 
-   play();
             "
             on-change="
             "
@@ -1153,17 +1072,15 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id10" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_11-one_hundred_and_eight.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_11-one_hundred_and_eight.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id11" 
             title="Number Identification 11"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_12-five_hundred_and_eighty_seven.mp3','prompt');
    //
@@ -1176,21 +1093,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix=" " postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id11" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_12-five_hundred_and_eighty_seven.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_12-five_hundred_and_eighty_seven.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_id12" 
             title="Number Identification 12"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_13-nine_hundred_and_eighty_nine.mp3','prompt'); 
-   //
-   play();
             "
             on-change="
             "
@@ -1199,24 +1111,19 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="" postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="num_id12" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_13-nine_hundred_and_eighty_nine.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_84-number-id-question-mark-audio-no-skipping.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_13-nine_hundred_and_eighty_nine.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="Transition_1" 
             title="Transition #1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_68-transition-now-were-going-to-try-something-different.mp3','instructions');
-   //
-   play();
             "
             on-change="
             "
@@ -1225,23 +1132,15 @@ play();
             "
           >
             <template>
-      <tangy-box name="transition_box_01" class="" style="">
-       <div style="text-align:center;font-size:2rem;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;">Now we're going to try something different</div>
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_68-transition-now-were-going-to-try-something-different.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="display:none;" class="talk" onclick="" id="prompt">
-       </div>
-</tangy-box>
+              <tangy-prompt-box name="tangerineMan" class=""  style="background: transparent;">
+                <option id="instructions" value="0" image="./assets/media/instructions.png" sound="assets/media/math_68-transition-now-were-going-to-try-something-different.mp3" play-on-open="on"></option>
+            </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp_demo" 
             title="Number Comparison - Demo"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_45-proxy_number_compare_demo.mp3','instructions');
-   // Next two lines obviated by demo video
-   // 
-   // play();
    // Background is already blue
             "
             on-change="
@@ -1254,21 +1153,15 @@ play();
        <div style="text-align:center;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;"> <video autoplay="" style="margin-left: auto" height="400px">
                <source src="./assets/media/math_81-number-compare-v2-screenshare-demo.mp4" type="video/mp4"></video> </div>
    </tangy-box>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <div id="instructions"></div>
-           <div id="prompt"></div>
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class=""  style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="assets/media/math_45-proxy_number_compare_demo.mp3"></option>
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp_prac1" 
             title="Number Comparison Practice 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');
-   //
-   play();
    // Background is already blue
             "
             on-change="
@@ -1283,21 +1176,16 @@ play();
     <option value="4">4</option>
     <option value="6">6</option>
 </tangy-radio-blocks>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+<tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+  <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3" play-on-open="on">
+  <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3">
+</tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp_prac2" 
             title="Number Comparison Practice 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','instructions');
-   //
-   play();
    // Background is already blue
             "
             on-change="
@@ -1312,24 +1200,19 @@ play();
     <option value="22">22</option>
     <option value="20">20</option>
 </tangy-radio-blocks>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp1" 
             title="Number Comparison 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',` background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/orange_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play(); 
             "
             on-change="
             "
@@ -1338,27 +1221,20 @@ play();
             "
           >
             <template>
-<tangy-radio-blocks name="num_comp_1" required="" question-number="" label="" hint-text="" error-text="" warn-text="" class="" style="" orientation="columns">
- <option value="7">7</option>
- <option value="5">5</option>
-<option value="9" correct="">9</option>
-</tangy-radio-blocks>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+    <tangy-radio-blocks name="num_comp_1" required="" question-number="" label="" hint-text="" error-text="" warn-text="" class="" style="" orientation="columns">
+      <option value="7">7</option>
+      <option value="5">5</option>
+      <option value="9" correct="">9</option>
+    </tangy-radio-blocks>
+    <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+      <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+      <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+    </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp2" 
             title="Number Comparison 2"
-             hide-back-button
-            on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
-            "
+             dont-hide-back-button
             on-change="
             "
             category="
@@ -1370,21 +1246,16 @@ play();
        <option value="24" correct="">24</option>
        <option value="13">13</option>
    </tangy-radio-blocks>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp3" 
             title="Number Comparison 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1397,21 +1268,16 @@ play();
        <option value="23">23</option>
         <option value="26">26</option>
    </tangy-radio-blocks>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp4" 
             title="Number Comparison 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1424,21 +1290,16 @@ play();
        <option value="47">47</option>
        <option value="56" correct="">56</option>
    </tangy-radio-blocks>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp5" 
             title="Number Comparison 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1451,21 +1312,16 @@ play();
     <option value="67" correct="">67</option>
     <option value="64">64</option>
    </tangy-radio-blocks>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp6" 
             title="Number Comparison 6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-  // 
-   play();
             "
             on-change="
             "
@@ -1479,21 +1335,16 @@ play();
     <option value="78">78</option>
     <option value="69">69</option>
 </tangy-radio-blocks>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+<tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+  <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+  <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+</tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp7" 
             title="Number Comparison 7"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1507,21 +1358,16 @@ play();
           <option value="137">137 </option>
           <option value="153" correct="">153 </option>
       </tangy-radio-blocks>
-      <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+      <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+        <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+        <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+      </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp8" 
             title="Number Comparison 8"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1534,21 +1380,16 @@ play();
     <option value="534" correct="">534</option>
     <option value="396">396</option>
    </tangy-radio-blocks>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp9" 
             title="Number Comparison 9"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1562,21 +1403,16 @@ play();
           <option value="623">623</option>
           <option value="626">626</option>
       </tangy-radio-blocks>
-      <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+      <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+        <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+        <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+      </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_num_comp10" 
             title="Number Comparison 10"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1589,24 +1425,19 @@ play();
        <option value="765 ">765</option>
        <option value="964" correct="">964</option>
    </tangy-radio-blocks>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_82-tap-on-the-biggest-number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_86-number-compare-v2-instructions-no-skipping.mp3'">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_82-tap-on-the-biggest-number.mp3" play-on-open="on">
+  </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="Transition_2" 
             title="Transition #2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-queue('./assets/media/math_69-transition-lets-move-on-to-something-else.mp3','instructions');
-//
-play();
             "
             on-change="
             "
@@ -1614,27 +1445,15 @@ play();
             "
           >
             <template>
-   <tangy-box name="transition_box_02" class="" style="">
-       <div style="text-align:center;font-size:2rem;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;">Let's move on to something else</div>
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_69-transition-lets-move-on-to-something-else.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="display:none;" class="talk" onclick="" id="prompt">
-       </div>
-</tangy-box>
+              <tangy-prompt-box name="tangerineMan" class=""  style="background: transparent;">
+                <option id="instructions" value="0" image="./assets/media/instructions.png" sound="assets/media/math_69-transition-lets-move-on-to-something-else.mp3" play-on-open="on"></option>
+            </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_demo" 
             title="Missing Number - Demo"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   //queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');
-   // Next two lines obviated by demo video
-   // 
-   // play();
-   //queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   // Next two lines obviated by demo video
-   // 
-    //play(2);
    // Background is already blue
             "
             on-change="
@@ -1647,25 +1466,15 @@ play();
        <div style="text-align:center;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;"> <video autoplay="" style="margin-left: auto" height="400px">
                <source src="./assets/media/math_54-missing-number-screenshare-demo.mp4" type="video/mp4"></video> </div>
    </tangy-box>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <div id="instructions"></div>
-           <div id="prompt"></div>
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class=""  style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3"></option>
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_prac_01" 
             title="Missing Number Practice 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   //queue('./assets/media/math_46-missing_number_proxy_demo-short.mp3','instructions');
-   //
-   //play();
-   //queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   queue('./assets/media/math_16-now_you_give_it_a_try-here_are_some_number_1_2_and_4-what_number_goes_here.mp3');
-   play();
    // Background is already blue
             "
             on-change="
@@ -1675,22 +1484,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="1, 2, [ " postfix=" ], 4" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_prac_01" label="Practice Question" class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_16-now_you_give_it_a_try-here_are_some_number_1_2_and_4-what_number_goes_here.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_16-now_you_give_it_a_try-here_are_some_number_1_2_and_4-what_number_goes_here.mp3" play-on-open="on">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_prac_02" 
             title="Missing Number Practice 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_17-here_are_some_numbers_5_10_and_15_what_number_goes_here.mp3','instructions');
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play(2);
             "
             on-change="
             "
@@ -1699,24 +1502,19 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="5, 10, 15, [ " postfix=" ]" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_prac_02" label=" Practice Question" class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_17-here_are_some_numbers_5_10_and_15_what_number_goes_here.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_17-here_are_some_numbers_5_10_and_15_what_number_goes_here.mp3" play-on-open="on">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_01" 
             title="Missing Number 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',` background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/orange_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1725,21 +1523,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="5, 6, 7, [ " postfix=" ]" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_01" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+</tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_02" 
             title="Missing Number 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1748,21 +1541,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="14, 15, [ " postfix=" ], 17" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_02" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_03" 
             title="Missing Number 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1771,21 +1559,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="20, [ " postfix=" ], 40, 50 " keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_03" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_04" 
             title="Missing Number 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play(); 
             "
             on-change="
             "
@@ -1794,21 +1577,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="[ " postfix=" ], 300, 400, 500 " keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_04" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_05" 
             title="Missing Number 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1817,21 +1595,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="2, 4, 6, [ " postfix=" ]" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_05" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_06" 
             title="Missing Number 6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1840,21 +1613,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="348, 349, [ " postfix=" ], 351" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_06" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_07" 
             title="Missing Number 7"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1864,21 +1632,16 @@ play();
           >
             <template>
 <tangy-keyboard-input prefix="28, [ " postfix=" ], 24, 22" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_07" required="" question-number="" label=" " hint-text="" error-text="" warn-text="" class="" style=""></tangy-keyboard-input>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+<tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+  <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+  <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+ </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_08" 
             title="Missing Number 8"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1887,21 +1650,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="30, 35, [ " postfix=" ], 45" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_08" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_09" 
             title="Missing Number 9"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1910,21 +1668,16 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="550, 540, 530, [ " postfix=" ]" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_09" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_miss_num_10" 
             title="Missing Number 10"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -1933,24 +1686,19 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="3, 8,  [ " postfix=" ], 18" keys="0 1 2 3 4 5 6 7 8 9" name="miss_num_10" label=" " class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_59-missing-number-question-mark-audio.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_59-missing-number-question-mark-audio.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_18-what_number_goes_here-use_the_digits_0-9_at_the_top_to_write_the_missing_number.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="Transition_3" 
             title="Transition #3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',`background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/blue_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_70-transition-next-well-do-something-different.mp3','instructions');
-   //
-   play();
             "
             on-change="
             "
@@ -1961,25 +1709,16 @@ play();
             <template>
       <tangy-box name="transition_box_03" class="" style="">
        <div style="text-align:center;font-size:2rem;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;">Next we'll do something different</div>
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_70-transition-next-well-do-something-different.mp3','instructions');play();" id="instructions">
-           <div id="prompt">  
-       </div>
-</div></tangy-box>
+      </tangy-box>
+      <tangy-prompt-box name="tangerineMan" class=""  style="background: transparent;">
+        <option id="instructions" value="0" image="./assets/media/instructions.png" sound="assets/media/math_70-transition-next-well-do-something-different.mp3" play-on-open="on"></option>
+      </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_demo" 
             title="Addition - Demo"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_47-addition_1_proxy_demo-short.mp3','instructions');
-   // Next two lines obviated by demo video
-   // 
-   // play();
-   queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
-   // Next two lines obviated by demo video
-   // 
-   // play();
    // Background is already blue
             "
             on-change="
@@ -1992,28 +1731,16 @@ play();
       <tangy-box name="addition_demo" class="" style="">
        <div style="text-align:center;padding:4rem 1.2rem;background-color:#fff;border-radius:1rem;"> <video autoplay="" style="margin-left: auto" height="400px">
                <source src="./assets/media/math_55-addition-1-screenshare-demo.mp4" type="video/mp4"></video> </div>
-   </tangy-box>
-      <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <div id="instructions"></div>
-           <div id="prompt"></div>
-       </div>
-   </tangy-box>
+      </tangy-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_01" 
             title="Addition_1 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
          document.styleSheets[1].addRule('body',` background-color: rgb(247, 246, 246) !important; height: 100% !important; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; font-family: Andika, sans-serif !important; font-size: 1.3rem !important; font-weight: 400 !important; line-height: 1.5 !important; margin: 0px !important; color: rgb(33, 33, 33) !important; background-image: url('./images/orange_hills_75.png') !important; background-size: cover !important; background-attachment: fixed !important; background-repeat: no-repeat !important; `,6);
-   queue('./assets/media/math_47-addition_1_proxy_demo-short.mp3','instructions');
-   //
-   //play();
-   queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
-   //
-   play(2);
             "
             on-change="
             "
@@ -2023,21 +1750,16 @@ play();
           >
             <template>
 <tangy-keyboard-input prefix="1 + 3 = " postfix="" keys="0 1 2 3 4 5 6 7 8 9" name="l1_addition_01" required="" question-number="" label="" hint-text="" error-text="" warn-text="" class="" style=""></tangy-keyboard-input>
-<tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_47-addition_1_proxy_demo-short.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+<tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+  <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_47-addition_1_proxy_demo-short.mp3" play-on-open="on">
+  <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3" play-on-open="on">
+</tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_02" 
             title="Addition_1 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
-   queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
-   //
-   play();
             "
             on-change="
             "
@@ -2046,17 +1768,15 @@ play();
           >
             <template>
    <tangy-keyboard-input prefix="2 + 3 = " keys="0 1 2 3 4 5 6 7 8 9" name="l1_addition_02" question-number="" label="" class="" style="" required=""></tangy-keyboard-input>
-   <tangy-box name="tangerineMan" class="" style="">
-       <div style="display:flex;margin-bottom:-2rem;" id="audios">
-           <img src="./assets/media/instructions.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;margin-right:0.5rem;" onclick="queue('./assets/media/math_47-addition_1_proxy_demo-short.mp3','instructions');play();" id="instructions">
-           <img src="./assets/images/ms-talk2.png" style="max-height:100px;width:auto;border-radius:0.5rem;border:5px solid transparent;" class="talk" onclick="queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');play();" id="prompt">
-       </div>
-   </tangy-box>
+   <tangy-prompt-box name="tangerineMan" class="" style="background: transparent;">
+    <option id="instructions" value="0" image="./assets/media/instructions.png" sound="./assets/media/math_47-addition_1_proxy_demo-short.mp3">
+    <option id="prompt" value="1" image="./assets/images/ms-talk2.png" sound="./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3" play-on-open="on">
+   </tangy-prompt-box>
             </template>
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_03" 
             title="Addition_1 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2079,7 +1799,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_04" 
             title="Addition_1 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2102,7 +1822,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_05" 
             title="Addition_1 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2126,7 +1846,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_06" 
             title="Addition_1 6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2149,7 +1869,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_07" 
             title="Addition_1 7"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2173,7 +1893,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_08" 
             title="Addition_1 8"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2196,7 +1916,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_09" 
             title="Addition_1 9"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2219,7 +1939,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_10" 
             title="Addition_1 10"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2242,7 +1962,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_11" 
             title="Addition_1 11"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2265,7 +1985,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_12" 
             title="Addition_1 12"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2289,7 +2009,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l1_addition_13" 
             title="Addition_1 13"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2312,7 +2032,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="Transition_4" 
             title="Transition #4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
@@ -2344,7 +2064,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l2_addition_01" 
             title="Addition_2 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
@@ -2374,7 +2094,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l2_addition_02" 
             title="Addition_2 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
  queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
  //
@@ -2397,7 +2117,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l2_addition_03" 
             title="Addition_2 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
  queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
  //
@@ -2420,7 +2140,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l2_addition_04" 
             title="Addition_2 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
  queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
  //
@@ -2443,7 +2163,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="sec_l2_addition_05" 
             title="Addition_2 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
  queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
  //
@@ -2466,7 +2186,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="copy_of_opening_pen_down_a678774cd64d4d05aeea653e58b81817" 
             title="Copy of Staging: Pen Down"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_78-place-pencil-and-paper-aside.mp3','instructions');
    //
@@ -2484,7 +2204,7 @@ play();
           </tangy-form-item>
           <tangy-form-item id="intro" 
             title="Intro"
-             hide-back-button
+             dont-hide-back-button
             on-open="
   // Make the background white
  document.styleSheets[1].removeRule(6);
@@ -2524,7 +2244,7 @@ Now let’s take a short break and play a game. You will see some bubbles appear
           </tangy-form-item>
           <tangy-form-item id="item1" 
             title="Item 1/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
 null
@@ -2545,7 +2265,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item2" 
             title="Item 2/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
             "
@@ -2575,7 +2295,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item3" 
             title="Item 3/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
             "
@@ -2605,7 +2325,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item4" 
             title="Item 4/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
 null
@@ -2636,7 +2356,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item5" 
             title="Item 5/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
             "
@@ -2666,7 +2386,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item6" 
             title="Item 6/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
             "
@@ -2696,7 +2416,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item7" 
             title="Item 7/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
 null
@@ -2726,7 +2446,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item8" 
             title="Item 8/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
 null
@@ -2757,7 +2477,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item9" 
             title="Item 9/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
 null
@@ -2788,7 +2508,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="item10" 
             title="Item 10/50"
-             hide-back-button
+             dont-hide-back-button
              hide-next-button
             on-open="
 null
@@ -2819,7 +2539,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="Transition_5" 
             title="Transition #5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
@@ -2845,7 +2565,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_demo" 
             title="Subtraction - Demo"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_48-subtraction_1_proxy_demo-short.mp3','instructions');
    // Next two lines obviated by demo video
@@ -2877,7 +2597,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_01" 
             title="Subtraction_1 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
@@ -2906,7 +2626,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_02" 
             title="Subtraction_1 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
   // 
@@ -2929,7 +2649,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_03" 
             title="Subtraction_1 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2952,7 +2672,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_04" 
             title="Subtraction_1 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -2975,7 +2695,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_05" 
             title="Subtraction_1 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
   // 
@@ -2999,7 +2719,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_06" 
             title="Subtraction_1 6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    play();
@@ -3021,7 +2741,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_07" 
             title="Subtraction_1 7"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3044,7 +2764,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_08" 
             title="Subtraction_1 8"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3067,7 +2787,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_09" 
             title="Subtraction_1 9"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3090,7 +2810,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_10" 
             title="Subtraction_1 10"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3113,7 +2833,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_11" 
             title="Subtraction_1 11"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3136,7 +2856,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_12" 
             title="Subtraction_1 12"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3159,7 +2879,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_subtraction_13" 
             title="Subtraction_1 13"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3182,7 +2902,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="Transition_6" 
             title="Transition #6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
@@ -3212,7 +2932,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l2_subtraction_01" 
             title="Subtraction_2 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
@@ -3241,7 +2961,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l2_subtraction_02" 
             title="Subtraction_2 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3264,7 +2984,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l2_subtraction_03" 
             title="Subtraction_2 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3287,7 +3007,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l2_subtraction_04" 
             title="Subtraction_2 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3310,7 +3030,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l2_subtraction_05" 
             title="Subtraction_2 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_19-use_the_digits_0-9_at_the_top_to_write_the_answer_to_the_problem.mp3','prompt');
    //
@@ -3333,7 +3053,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="Transition_7" 
             title="Transition #7"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background blue
          document.styleSheets[1].removeRule(6);
@@ -3363,7 +3083,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_demo" 
             title="Word Prob - Demo"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_67-word-problem-question-mark-audio.mp3','instructions');
    // Next two lines obviated by demo video
@@ -3395,7 +3115,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_prac" 
             title="Word Prob Practice"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_67-word-problem-question-mark-audio.mp3');
    //
@@ -3422,7 +3142,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_01" 
             title="Word Problem 1"
-             hide-back-button
+             dont-hide-back-button
             on-open="
          // Make the background orange again
          document.styleSheets[1].removeRule(6);
@@ -3449,7 +3169,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_02" 
             title="Word Problem 2"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_63-Ghanaian-word-problem-2.mp3','prompt');
    //
@@ -3472,7 +3192,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_03" 
             title="Word Problem 3"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_80-word-problem-3.mp3','prompt');
    //
@@ -3495,7 +3215,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_04" 
             title="Word Problem 4"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_64-Ghanaian-word-problem-4.mp3','prompt');
    //
@@ -3518,7 +3238,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_05" 
             title="Word Problem 5"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_65-Ghanaian-word-problem-5.mp3','prompt');
    //
@@ -3541,7 +3261,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="sec_l1_word_problem_06" 
             title="Word Problem 6"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/math_66-Ghanaian-word-problem-6.mp3','prompt');
    //
@@ -3564,7 +3284,7 @@ null
           </tangy-form-item>
           <tangy-form-item id="closing_screen" 
             title="Closing Screen"
-             hide-back-button
+             dont-hide-back-button
             on-open="
    queue('./assets/media/please-return-tablet.mp3','instructions');
    //showDuration(document.querySelector(`img[id='instructions']`));
