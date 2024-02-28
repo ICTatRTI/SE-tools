@@ -74,5 +74,53 @@
       "pull": false,
       "filterByLocation": false
     }
+  },
+  {
+    "id": "numbers-test",
+    "type": "form",
+    "title": "Numbers (Demo)",
+    "src": "./assets/numbers-test/form.html",
+    "searchSettings": {
+      "shouldIndex": false,
+      "variablesToIndex": [],
+      "primaryTemplate": "",
+      "secondaryTemplate": ""
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": false,
+      "push": true,
+      "pull": false,
+      "filterByLocation": false
+    }
+  },
+  {
+    "id": "letters-test",
+    "type": "form",
+    "title": "Letters (Demo)",
+    "src": "./assets/letters-test/form.html",
+    "searchSettings": {
+      "shouldIndex": false,
+      "variablesToIndex": [],
+      "primaryTemplate": "",
+      "secondaryTemplate": ""
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": false,
+      "push": true,
+      "pull": false,
+      "filterByLocation": false
+    }
   }
 ]
