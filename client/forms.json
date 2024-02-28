@@ -122,5 +122,53 @@
       "pull": false,
       "filterByLocation": false
     }
+  },
+  {
+    "id": "form-5bac8a32-c74d-4cbc-a222-1b09c09d9df6",
+    "type": "form",
+    "title": "Prompt Demo",
+    "src": "./assets/form-5bac8a32-c74d-4cbc-a222-1b09c09d9df6/form.html",
+    "searchSettings": {
+      "shouldIndex": false,
+      "variablesToIndex": [],
+      "primaryTemplate": "",
+      "secondaryTemplate": ""
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": false,
+      "push": true,
+      "pull": false,
+      "filterByLocation": false
+    }
+  },
+  {
+    "id": "form-b988722a-1d9f-4992-ba1f-1aee00f19f0f",
+    "type": "form",
+    "title": "New Form",
+    "src": "./assets/form-b988722a-1d9f-4992-ba1f-1aee00f19f0f/form.html",
+    "searchSettings": {
+      "shouldIndex": false,
+      "variablesToIndex": [],
+      "primaryTemplate": "",
+      "secondaryTemplate": ""
+    },
+    "customSyncSettings": {
+      "enabled": false,
+      "push": false,
+      "pull": false,
+      "excludeIncomplete": false
+    },
+    "couchdbSyncSettings": {
+      "enabled": false,
+      "push": true,
+      "pull": false,
+      "filterByLocation": false
+    }
   }
 ]
