@@ -1,3 +1,9 @@
+> [!NOTE]
+> There is an updated version of these forms in Kiswahili, using the built-in radio blocks and tangy prompt inputs.
+> - [Mainland](https://github.com/Tangerine-Community/tanzania-mainland-sa-egrma)
+> - [Zanzibar](https://github.com/Tangerine-Community/tanzania-zanzibar-sa-egrma)
+
+
 # Self-Administered EGRA / EGMA
 
 Self-Evaluation Tools content set for Tangerine. This content provides 2x self-evaluation tools, one is for reading and the other for math. Use this interactive content straight out of the box when creating new groups. 
