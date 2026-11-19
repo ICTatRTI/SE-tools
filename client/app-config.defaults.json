@@ -2,6 +2,7 @@
    "goHomeAfterFormSubmit":true,
    "kioskMode": true,
    "syncProtocol": "1",
+   "exitClicks": 8,
    "p2pSync": "true",
    "homeUrl" : "custom-app",
    "serverUrl" : "http://localhost/",
